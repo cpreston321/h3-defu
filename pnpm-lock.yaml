@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@nuxtjs/eslint-config-typescript': latest
   '@types/supertest': latest
+  '@vitest/coverage-c8': ^0.23.4
   c8: latest
   defu: ^6.1.0
   eslint: latest
@@ -20,6 +21,7 @@ dependencies:
 devDependencies:
   '@nuxtjs/eslint-config-typescript': registry.npmjs.org/@nuxtjs/eslint-config-typescript/11.0.0_irgkl5vooow2ydyo6aokmferha
   '@types/supertest': registry.npmjs.org/@types/supertest/2.0.12
+  '@vitest/coverage-c8': registry.npmjs.org/@vitest/coverage-c8/0.23.4
   c8: registry.npmjs.org/c8/7.12.0
   eslint: registry.npmjs.org/eslint/8.23.1
   standard-version: registry.npmjs.org/standard-version/9.5.0
@@ -861,6 +863,26 @@ packages:
     dependencies:
       '@typescript-eslint/types': registry.npmjs.org/@typescript-eslint/types/5.38.0
       eslint-visitor-keys: registry.npmjs.org/eslint-visitor-keys/3.3.0
+    dev: true
+
+  registry.npmjs.org/@vitest/coverage-c8/0.23.4:
+    resolution: {integrity: sha512-jmD00a5DQH9gu9K+YdvVhcMuv2CzHvU4gCnySS40Ec5hKlXtlCzRfNHl00VnhfuBeaQUmaQYe60BLT413HyDdg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@vitest/coverage-c8/-/coverage-c8-0.23.4.tgz}
+    name: '@vitest/coverage-c8'
+    version: 0.23.4
+    dependencies:
+      c8: registry.npmjs.org/c8/7.12.0
+      vitest: registry.npmjs.org/vitest/0.23.4
+    transitivePeerDependencies:
+      - '@edge-runtime/vm'
+      - '@vitest/browser'
+      - '@vitest/ui'
+      - happy-dom
+      - jsdom
+      - less
+      - sass
+      - stylus
+      - supports-color
+      - terser
     dev: true
 
   registry.npmjs.org/JSONStream/1.3.5:

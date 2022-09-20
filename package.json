@@ -1,6 +1,6 @@
 {
   "name": "h3-defu",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple utility to deep merge objects that extends h3 body and query parameters passed.",
   "repository": "cpreston321/h3-defu",
   "license": "MIT",

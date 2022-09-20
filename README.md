@@ -63,7 +63,9 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Credits
 
-[`nuxi`](https://v3.nuxtjs.org/api/commands/add/) is developed by [@nuxt](https://github.com/nuxt)
+[`h3`](https://github.com/unjs/h3) is developed by [@unjs](https://github.com/unjs)
+
+[`defu`](https://github.com/unjs/defu) is developed by [@unjs](https://github.com/unjs)
 
 [`README Inspiration`](https://github.com/zernonia) by [@zernonia](https://github.com/zernonia)
 

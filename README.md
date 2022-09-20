@@ -22,8 +22,8 @@ pnpm install h3-defu
 ## Usage
 
 ```js
-import { createServer } from 'http'
 import { createApp } from 'h3'
+import { createServer } from 'http'
 import { readBodyWithDefaults, getQueryWithDefaults } from 'h3-defu'
 
 const app = createApp()

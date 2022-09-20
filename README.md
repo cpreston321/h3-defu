@@ -90,8 +90,8 @@ Also, if you like my work, please feel free to [buy me a coffee](https://www.buy
 [npm-downloads-src]: https://img.shields.io/npm/dm/h3-defu?style=flat-square
 [npm-downloads-href]: https://npmjs.com/package/h3-defu
 
-[github-actions-src]: https://img.shields.io/github/workflow/status/kevinmarrec/h3-defu/CI
-[github-actions-href]: https://github.com/kevinmarrec/h3-defu/actions?query=workflow%3Aci
+[github-actions-src]: https://img.shields.io/github/workflow/status/cpreston321/h3-defu/CI
+[github-actions-href]: https://github.com/cpreston321/h3-defu/actions?query=workflow%3Aci
 
-[codecov-src]: https://img.shields.io/codecov/c/gh/kevinmarrec/h3-defu/main?style=flat-square
-[codecov-href]: https://codecov.io/gh/kevinmarrec/h3-defu
+[codecov-src]: https://img.shields.io/codecov/c/gh/cpreston321/h3-defu/main?style=flat-square
+[codecov-href]: https://codecov.io/gh/cpreston321/h3-defu

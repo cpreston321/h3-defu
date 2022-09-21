@@ -14,3 +14,7 @@ export function getQueryWithDefaults<D extends IDefuDefaults> (event: Compatibil
   const query = getQuery(event)
   return defu(query, defaults) as D
 }
+
+/* @deprecated use `readBodyWithDefaults` */
+/* c8 ignore next */
+export const useQueryWithDefaults = getQueryWithDefaults

@@ -14,3 +14,7 @@ export async function readBodyWithDefaults<D extends IDefuDefaults> (event: Comp
   const body = await readBody(event)
   return defu(body, defaults) as D
 }
+
+/* @deprecated use `readBodyWithDefaults` */
+/* c8 ignore next */
+export const useBodyWithDefaults = readBodyWithDefaults

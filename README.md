@@ -6,6 +6,7 @@
 [![Codecov][codecov-src]][codecov-href]
 
 > JSON Defaults for [h3](https://github.com/unjs/h3), using [defu](https://github.com/unjs/defu) under the hood.
+
 ## Install
 
 ```sh
@@ -22,33 +23,39 @@ pnpm install h3-defu
 ## Usage
 
 ```js
-import { createApp } from 'h3'
-import { createServer } from 'http'
-import { readBodyWithDefaults, getQueryWithDefaults } from 'h3-defu'
-// or
-// if this way is more familiar to you until the convention is full deprecated  
-import { useBodyWithDefaults, useQueryWithDefaults } from 'h3-defu'
+import { createServer } from 'node:http'
+import { createApp, eventHandler, toNodeListener } from 'h3'
+import { getQueryWithDefaults, readBodyWithDefaults } from 'h3-defu'
 
 const app = createApp()
 
-app.use('/', async (event) => {
+app.use('/api/test', eventHandler(async (event) => {
   // Default body
+  // example BODY: { show: false }
+  // expected: { show: false, name: 'Anonymous' }
   const body = await readBodyWithDefaults(event, {
     show: true,
-    name: "Anonymous"
+    name: 'Anonymous'
   })
 
   // Default query
+  // example: /api/test?page=2
+  // expected: { page: 1, limit: 10 }
   const query = getQueryWithDefaults(event, {
     page: 1,
     limit: 10
   })
-})
 
-createServer(app).listen(process.env.PORT || 3000)
+  return {
+    body,
+    query
+  }
+}))
+
+createServer(toNodeListener(app)).listen(process.env.PORT || 3000)
 ```
 
-## Development 💻 
+## Development 💻
 
 - Clone this repository
 - Install dependencies using `pnpm install`

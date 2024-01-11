@@ -1,7 +1,7 @@
 {
   "name": "h3-defu",
   "type": "module",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "packageManager": "pnpm@8.14.1",
   "description": "A simple utility to deep merge objects that extends h3 body and query parameters passed.",
   "license": "MIT",

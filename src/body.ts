@@ -1,7 +1,6 @@
 import { defu } from 'defu'
-import type { EventHandlerRequest, H3Event } from 'h3'
 import { readBody } from 'h3'
-
+import type { EventHandlerRequest, H3Event } from 'h3'
 import type { IDefuDefaults } from './types'
 
 /**

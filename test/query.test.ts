@@ -1,6 +1,8 @@
-import supertest, { SuperTest, Test } from 'supertest'
-import { describe, beforeEach, it, expect } from 'vitest'
-import { createApp, App } from 'h3'
+import type { SuperTest, Test } from 'supertest'
+import supertest from 'supertest'
+import { beforeEach, describe, expect, it } from 'vitest'
+import type { App } from 'h3'
+import { createApp, eventHandler, toNodeListener } from 'h3'
 import { getQueryWithDefaults } from '../src'
 
 describe('getQueryWithDefaults', () => {
@@ -9,16 +11,16 @@ describe('getQueryWithDefaults', () => {
 
   beforeEach(() => {
     app = createApp({ debug: false })
-    request = supertest(app)
+    request = supertest(toNodeListener(app))
   })
 
   const queryDefaults = {
     name: 'John',
-    foo: 'bar'
+    foo: 'bar',
   }
 
   it('query: has one default "fo" property', async () => {
-    app.use('/defaults', event => getQueryWithDefaults(event, queryDefaults))
+    app.use('/defaults', eventHandler(event => getQueryWithDefaults(event, queryDefaults)))
 
     const res = await request.get('/defaults?name=Christian')
 
@@ -26,19 +28,19 @@ describe('getQueryWithDefaults', () => {
     expect(res.body).toEqual(
       expect.objectContaining({
         name: 'Christian',
-        foo: queryDefaults.foo
-      })
+        foo: queryDefaults.foo,
+      }),
     )
   })
 
   it('query: has both default properties', async () => {
-    app.use('/defaults', req => getQueryWithDefaults(req, queryDefaults))
+    app.use('/defaults', eventHandler(event => getQueryWithDefaults(event, queryDefaults)))
 
     const res = await request.get('/defaults')
 
     expect(res.status).toEqual(200)
     expect(res.body).toEqual(
-      expect.objectContaining(queryDefaults)
+      expect.objectContaining(queryDefaults),
     )
   })
 })

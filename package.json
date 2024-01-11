@@ -1,10 +1,11 @@
 {
   "name": "h3-defu",
-  "version": "0.1.4",
-  "description": "A simple utility to deep merge objects that extends h3 body and query parameters passed.",
-  "repository": "cpreston321/h3-defu",
-  "license": "MIT",
   "type": "module",
+  "version": "0.1.4",
+  "packageManager": "pnpm@8.14.1",
+  "description": "A simple utility to deep merge objects that extends h3 body and query parameters passed.",
+  "license": "MIT",
+  "repository": "cpreston321/h3-defu",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
@@ -20,27 +21,36 @@
   "scripts": {
     "build": "unbuild",
     "dev": "vitest dev",
-    "lint": "eslint --ext .ts,.js,.mjs,.cjs .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "prepack": "unbuild",
     "release": "pnpm test && standard-version && git push --follow-tags && pnpm publish",
     "test": "vitest run",
     "test:coverage": "pnpm test -- --reporter verbose --coverage"
   },
   "dependencies": {
-    "defu": "^6.1.0",
-    "h3": "^0.7.21"
+    "defu": "^6.1.4",
+    "h3": "^1.10.0"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config-typescript": "latest",
+    "@antfu/eslint-config": "^2.6.2",
     "@types/supertest": "latest",
-    "@vitest/coverage-c8": "^0.24.0",
+    "@vitest/coverage-c8": "^0.33.0",
     "c8": "latest",
-    "eslint": "latest",
+    "eslint": "npm:eslint-ts-patch@8.56.0-0",
+    "eslint-ts-patch": "8.56.0-0",
+    "lint-staged": "^15.2.0",
+    "simple-git-hooks": "^2.9.0",
     "standard-version": "latest",
     "supertest": "latest",
     "typescript": "latest",
     "unbuild": "latest",
     "vitest": "latest"
   },
-  "packageManager": "pnpm@7.12.1"
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
 }

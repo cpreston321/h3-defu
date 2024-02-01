@@ -23,7 +23,7 @@ jobs:
       - run: pnpm lint
       - run: pnpm test:coverage
       - run: pnpm build
-      - uses: codecov/codecov-action@v3
+      - uses: codecov/codecov-action@v4
       - if: github.event_name == 'push' && startsWith(github.event.head_commit.message, 'chore(release)')
         run: pnpm publish -q --access public
         env:
